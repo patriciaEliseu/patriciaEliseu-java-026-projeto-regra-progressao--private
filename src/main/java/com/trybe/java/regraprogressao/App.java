@@ -12,17 +12,29 @@ public class App {
    */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-
     System.out.print("Digite a quantidade de atividades para cadastrar: ");
     String input = scanner.nextLine();
     int numeroAtividades = Integer.parseInt(input);
+    int pesoTotal = 0;
+    int notaTotal = 0;
+    int mediaTotal = 0;
+
     for (int i = 1; i <= numeroAtividades; i++) {
       System.out.println("Digite o nome da atividade " + i + ":");
       String nome = scanner.nextLine();
       System.out.println("Digite o peso da atividade " + i + ":");
       int peso = Integer.parseInt(scanner.nextLine());
-      System.out.println("Digite a nota obtida para " + i + ":");
+      System.out.println("Digite a nota obtida para " + (nome) + ":");
       int nota = Integer.parseInt(scanner.nextLine());
+
+      pesoTotal += peso;
+      notaTotal += (nota * peso);
+
+      if (pesoTotal == 100) {
+        mediaTotal = notaTotal / pesoTotal;
+      } else {
+        System.out.println("Peso total diferente de 100.");
+      }
     }
   }
 }
