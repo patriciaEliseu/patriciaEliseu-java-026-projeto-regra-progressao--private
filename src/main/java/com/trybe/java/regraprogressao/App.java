@@ -36,5 +36,14 @@ public class App {
         System.out.println("Peso total diferente de 100.");
       }
     }
+
+
+    if (mediaTotal >= 85) {
+      System.out.println("Parabéns! Você alcançou " + mediaTotal + ".0%! temos o prazer de informar que você obteve aprovação!");
+    } else if (mediaTotal < 85) {
+      System.out.println("Lamentamos informar que, com base na sua pontuação alcançada neste período, " + mediaTotal + ".0%!, você não atingiu a pontuação mínima necessária para sua aprovação.");
+    }
+    scanner.close();
   }
+
 }
